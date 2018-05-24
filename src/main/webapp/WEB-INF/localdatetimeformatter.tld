@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+  <description>LocalDateTime Formatter Custom Tag</description>
+  <tlib-version>2.1</tlib-version>
+  <short-name>formatter</short-name>
+  <uri>https://epam.com/jsp/tlds/formatter</uri>
+  <tag>
+    <name>formatLocalDate</name>
+    <tag-class>com.epam.magazinestore.tag.LocalDateTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>pattern</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>localDate</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>formatLocalDateTime</name>
+    <tag-class>com.epam.magazinestore.tag.LocalDateTimeTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>pattern</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>localDateTime</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

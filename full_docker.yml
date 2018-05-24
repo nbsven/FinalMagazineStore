@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+
+  #database
+  magazine-store-database:
+    image: postgres:10
+    container_name: magazinestore
+    ports:
+     - 5440:5432
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=magazinestore
+     - PGDATA=/var/lib/postgresql/data/magazinestore
+    volumes:
+     - /home/db/magazinestore:/var/lib/postgresql/data/magazinestore
+    restart: always
+
+  #application
+  magazine-store-application:
+    image: magazine_store
+    restart: always
+    ports:
+    - 8080:8080
+    depends_on:
+    - magazine-store-database
+

@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+
+  #database
+    timeseries:
+      image: postgres:10
+      container_name: magazinestores
+      ports:
+       - 5440:5432
+      environment:
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres
+       - POSTGRES_DB=magazinestore
+       - PGDATA=/var/lib/postgresql/data/magazinestores
+      volumes:
+        - /home/db/magazinestores:/var/lib/postgresql/data/magazinestores
